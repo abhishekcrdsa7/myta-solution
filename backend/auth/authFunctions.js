@@ -14,9 +14,12 @@ function tokenForUser(user) {
 exports.signup = function(req,res) {
     const password = req.body.password;
     const username = req.body.username;
+    if (!username || !password) {
+      return res.status(422).send({ error: 'You must provide username and password'});
+    }
     const exist = _.filter(users,(o) => o.username === username)
     if(exist[0]){
-      return res.json({error: "The user with this username is already present"});
+      return res.status(422).json({error: "The user with this username is already present"});
     }
     bcrypt.hash(password, saltRounds, function(err, hash) {
       if(err){
