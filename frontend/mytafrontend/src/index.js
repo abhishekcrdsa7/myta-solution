@@ -11,10 +11,11 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers/rootReducer';
+import reduxThunk from 'redux-thunk';
 
-const storeWithMiddleware = applyMiddleware()(createStore(rootReducer));
+const storeWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 ReactDOM.render(
-  <Provider store= {storeWithMiddleware}>
+  <Provider store= {storeWithMiddleware(rootReducer)}>
     <BrowserRouter>
         <div>
           <Navbar />

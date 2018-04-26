@@ -8,49 +8,52 @@ import axios from 'axios';
 
 const ROOT_URL = 'http://localhost:3001';
 
-export function login({ username,password }){
+export const login = function({ username,password }){
   return function(dispatch){
     axios.post(`${ROOT_URL}/login`,{
       username,
       password
     })
     .then((response) => {
+      if(response.data.error) {
+        return  dispatch(authError("Bad Login Info."));
+      }
       dispatch({type: AUTH_USER});
       localStorage.setItem('token', response.data.token);
-    })
-    .catch((error) => {
-      dispatch(autherror("Bad Login Info."));
     });
   }
 }
 
-export function register({ username, password }) {
-  return function(dispatch) {
-    axios.post(`${ROOT_URL}/register`, { username, password })
-      .then(response => {
-        dispatch({ type: AUTH_USER });
-        localStorage.setItem('token', response.data.token);
-      })
-      .catch(response => dispatch(authError(response.data.error)));
-  }
-}
 
-export function authError(error) {
+export const authError = function(error) {
   return {
     type: AUTH_ERROR,
     payload: error
   };
 }
 
-export function logoutUser() {
+export const register = function({ username, password }) {
+  return function(dispatch) {
+    axios.post(`${ROOT_URL}/register`, { username, password })
+      .then(response => {
+        if(response.data.error){
+          return dispatch(authError(response.data.error));
+        }
+        dispatch({ type: AUTH_USER });
+        localStorage.setItem('token', response.data.token);
+      })
+  }
+}
+
+export const logoutUser = function() {
   localStorage.removeItem('token');
 
   return { type: UNAUTH_USER };
 }
 
-export function fetchData() {
+export const fetchData = function() {
   return function(dispatch) {
-    axios.get('${ROOT_URL}/contents', {
+    axios.get(`${ROOT_URL}/contents`, {
       headers: { authorization: localStorage.getItem('token') }
     })
     .then(response => {
