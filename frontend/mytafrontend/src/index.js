@@ -8,8 +8,13 @@ import Register from './components/register';
 import { Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import rootReducer from './reducers/rootReducer';
 
+const storeWithMiddleware = applyMiddleware()(createStore(rootReducer));
 ReactDOM.render(
+  <Provider store= {storeWithMiddleware}>
     <BrowserRouter>
         <div>
           <Navbar />
@@ -18,5 +23,6 @@ ReactDOM.render(
           <Route path="/login" component={Login}/>
         </div>
     </BrowserRouter>
+  </Provider>
   , document.getElementById('root'));
 registerServiceWorker();
