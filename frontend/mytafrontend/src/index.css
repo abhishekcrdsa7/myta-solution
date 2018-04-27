@@ -7,7 +7,6 @@ body {
 
 .form {
   width: 30vw;
-  margin-top: 150px;
   margin-left: auto;
   margin-right: auto;
   border: 2px solid gray;
@@ -19,6 +18,10 @@ body {
   animation-duration: 0.5s;
   animation-timing-function: cubic-bezier(.52,.11,.44,1.58);
   animation-iteration-count: 1;
+}
+
+.form-pad {
+  padding-top: 150px;
 }
 
 @keyframes formAppear {

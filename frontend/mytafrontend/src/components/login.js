@@ -55,14 +55,16 @@ class Login extends Component {
   render(){
     const {handleSubmit} = this.props;
     return(
-      <div className="container">
+      <div className="logreForm">
       <div style={{"color": "red"}}>{this.error ? this.error: ""}</div>
+        <div className="form-pad">
           <form className="form" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
               <div className="text-center"><h3>Login</h3></div>
               <Field  name="username" label="Username" component={this.renderField}/>
               <Field  name="password" label="Password" component={this.renderFieldPassword}/>
               <button action="submit" className="btn btn-primary">Log in</button>
           </form>
+        </div>
       </div>
     );
   }

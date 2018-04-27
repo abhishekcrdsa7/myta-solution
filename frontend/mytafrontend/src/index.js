@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Navbar from './components/navbar';
-import App from './App';
 import Login from './components/login';
 import Register from './components/register';
 import { Route } from 'react-router';
@@ -12,16 +11,23 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers/rootReducer';
 import reduxThunk from 'redux-thunk';
+import Elechrg from './components/class11/science/elechrg';
+import EqnofLine from './components/class11/maths/eqnofln';
+import RlsOfUSA from './components/class12/sst/rlsofusa';
+import Home from './components/home';
 
 const storeWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 ReactDOM.render(
   <Provider store= {storeWithMiddleware(rootReducer)}>
     <BrowserRouter>
         <div>
-          <Navbar />
-          <Route exact path="/" component={App} />
+          <Route path="/" component={Navbar} />
           <Route path="/register" component={Register}/>
           <Route path="/login" component={Login}/>
+          <Route path="/elechrg" component={Elechrg}/>
+          <Route path="/eqnofln" component={EqnofLine}/>
+          <Route path="/rlsofusa" component={RlsOfUSA}/>
+          <Route exact path="/" component={Home} />
         </div>
     </BrowserRouter>
   </Provider>

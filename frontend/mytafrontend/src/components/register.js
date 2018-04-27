@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Field,reduxForm } from 'redux-form';
-import {login, register, fetchData} from '../actions/index';
+import {login, register, fetchMessage} from '../actions/index';
 import { connect } from 'react-redux';
 
 class Register extends Component {
@@ -55,15 +55,17 @@ class Register extends Component {
   render(){
     const { handleSubmit } = this.props;
     return(
-      <div className="container">
+      <div className="logreForm">
       <div style={{"color": "red"}}>{this.error ? this.error: ""}</div>
-        <form className="form" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-          <div className="text-center"><h3>Register</h3></div>
-          <Field  name="username" label="Username" component={this.renderField}/>
-          <Field  name="password" label="Password" component={this.renderFieldPassword}/>
-          <Field  name="passwordConfirm" label="Confirm Password" component={this.renderFieldPassword}/>
-          <button type="submit" className="btn btn-primary">Submit</button>
-        </form>
+        <div className="form-pad">
+          <form className="form" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+            <div className="text-center"><h3>Register</h3></div>
+            <Field  name="username" label="Username" component={this.renderField}/>
+            <Field  name="password" label="Password" component={this.renderFieldPassword}/>
+            <Field  name="passwordConfirm" label="Confirm Password" component={this.renderFieldPassword}/>
+            <button type="submit" className="btn btn-primary">Submit</button>
+          </form>
+        </div>  
       </div>
     );
   }
@@ -90,4 +92,4 @@ function mapStateToProps(state) {
 export default reduxForm({
   form: 'register',
   validate
-})(connect(mapStateToProps,{login, register, fetchData})(Register));
+})(connect(mapStateToProps,{login, register, fetchMessage})(Register));

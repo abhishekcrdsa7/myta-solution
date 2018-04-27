@@ -51,7 +51,7 @@ export const logoutUser = function() {
   return { type: UNAUTH_USER };
 }
 
-export const fetchData = function() {
+export const fetchMessage = function() {
   return function(dispatch) {
     axios.get(`${ROOT_URL}/contents`, {
       headers: { authorization: localStorage.getItem('token') }
