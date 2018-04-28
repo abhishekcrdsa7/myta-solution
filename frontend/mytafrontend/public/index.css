@@ -1,3 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 #logout:hover {
   cursor: pointer;
 }
@@ -34,11 +46,11 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
                     url(http://study.com/cimages/course-image/the-adventures-of-huckleberry-finn-study-guide_199157_large.jpg);
   color: white;
-  width: 100vw;
   height: 91.5vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  overflow: hidden;
   z-index: -1;
 }
 
@@ -51,22 +63,22 @@
 #login {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(https://adroitsources.com/images/newpic/login.jpg);
   color: white;
-  width: 100vw;
   height: 91.5vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  overflow: hidden;
   z-index: -1;
 }
 
 .logreForm {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(https://adroitsources.com/images/newpic/login.jpg);
   color: white;
-  width: 100vw;
   height: 91.5vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  overflow: hidden;
   z-index: -1;
 }
 
@@ -108,4 +120,37 @@
   background-color: rgba(236, 236, 236, 0.9);
   border-radius: 10px;
   box-shadow: 1px 3px 5px gray;
+}
+
+
+
+.form {
+  width: 30vw;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid gray;
+  padding: 30px 10px;
+  border-radius: 5%;
+  background-color: rgba(236, 236, 236, 0.2);
+  box-shadow: 1px 2px 2px gray;
+  animation-name: formAppear;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(.52,.11,.44,1.58);
+  animation-iteration-count: 1;
+}
+
+.form-pad {
+  padding-top: 150px;
+}
+
+@keyframes formAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -22,39 +22,39 @@ class Navbar extends Component {
             </Link>
               <ul className="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
                 <li className="dropdown-submenu">
-                  <Link className="dropdown-item" tabIndex="-1" to="#">
+                  <Link className="dropdown-item grade" tabIndex="-1" to="#">
                   Grade 11
                   </Link>
                   <ul className="dropdown-menu">
                     <li className="dropdown-submenu">
-                    <Link className="dropdown-item" to="#">
+                    <Link className="dropdown-item sub" to="#">
                     Science
                     </Link>
                     <ul className="dropdown-menu">
-                      <li><Link className="dropdown-item" to="/elechrg">Electric Charge</Link></li>
+                      <li><Link className="dropdown-item chap" to="/elechrg">Electric Charge</Link></li>
                     </ul>
                 </li>
                 <li className="dropdown-submenu">
-                  <Link className="dropdown-item" to="#">
+                  <Link className="dropdown-item sub" to="#">
                   Mathematics
                   </Link>
                   <ul className="dropdown-menu">
-                    <li><Link className="dropdown-item" to="/eqnofln">Equation of Line</Link></li>
+                    <li><Link className="dropdown-item chap" to="/eqnofln">Equation of Line</Link></li>
                   </ul>
                 </li>
               </ul>
             </li>
             <li className="dropdown-submenu">
-              <Link className="dropdown-item" tabIndex="-1" to="#">
+              <Link className="dropdown-item grade" tabIndex="-1" to="#">
               Grade 12
               </Link>
               <ul className="dropdown-menu">
                 <li className="dropdown-submenu">
-                  <Link className="dropdown-item" to="#">
+                  <Link className="dropdown-item sub" to="#">
                   Social Studies
                   </Link>
                   <ul className="dropdown-menu">
-                    <li><Link className="dropdown-item" to="/rlsofusa">Rulers Of USA</Link></li>
+                    <li><Link className="dropdown-item chap" to="/rlsofusa">Rulers Of USA</Link></li>
                   </ul>
                 </li>
               </ul>

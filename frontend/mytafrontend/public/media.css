@@ -1,0 +1,136 @@
+
+
+/* Small tablet to big tablet: from 768px to 1023px */
+@media only screen and (max-width: 1023px) {
+  .grade {
+    background-color: #EEEEEE;
+  }
+
+  .sub {
+    background-color: #BBBBBB;
+  }
+
+  .chap {
+    background-color: #919191;
+  }
+
+  .form {
+    width: 400px;
+  }
+
+  .questionPaper.container {
+    width: 70vw;
+    font-size: 16px;
+  }
+
+  .queshead {
+    font-size: 28px;
+  }
+
+}
+
+
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
+  .hmbtn {
+    display: inline-block;
+  }
+
+
+  #hmhead {
+    font-size: 25px;
+  }
+
+  #hmlogin {
+    width: 100px;
+    margin: 0px 20px;
+  }
+
+  #hmreg {
+    width: 100px;
+    margin: 0px 20px;
+  }
+
+  .form {
+    width: 300px;
+  }
+
+  .form-pad {
+    padding-top: 50px
+  }
+
+  .questionPaper.container {
+    width: 100vw;
+    font-size: 18px;
+  }
+
+  .queshead {
+    font-size: 24px;
+  }
+
+  .grade {
+    background-color: #EEEEEE;
+  }
+
+  .sub {
+    background-color: #BBBBBB;
+  }
+
+  .chap {
+    background-color: #919191;
+  }
+
+
+}
+
+
+
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px) {
+  .hmbtn {
+    display: inline-block;
+  }
+
+  #hmhead {
+    font-size: 18px;
+  }
+
+  #hmlogin {
+    width: 100px;
+    margin: 0px 10px;
+  }
+
+  #hmreg {
+    width: 100px;
+    margin: 0px 10px;
+  }
+
+  .form {
+    width: 266px;
+  }
+
+  .form-pad {
+    padding-top: 50px
+  }
+
+  .questionPaper.container {
+    width: 100vw;
+    font-size: 15px;
+  }
+
+  .queshead {
+    font-size: 20px;
+  }
+
+  .grade {
+    background-color: #EEEEEE;
+  }
+
+  .sub {
+    background-color: #BBBBBB;
+  }
+
+  .chap {
+    background-color: #919191;
+  }
+}
