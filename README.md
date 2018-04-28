@@ -5,3 +5,8 @@ The backend which includes authentication and data fetching from json api is don
 The frontend of this app is done using react and redux.
 
 The authentication part is done using jwt(java web tokens).
+
+
+////To start the frontend the command in the terminal is npm start.
+
+////To start the backend server the command in the terminal is node app.js
