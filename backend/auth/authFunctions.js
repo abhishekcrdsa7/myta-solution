@@ -35,6 +35,9 @@ exports.signup = function(req,res) {
   }
 
   exports.signin = function(req, res){
+    if(req.user.error){
+      return res.send({error: "Username/Password field does not match our record."});
+    }
     const password = req.body.password;
     const username = req.body.username;
     bcrypt.compare(password,req.user.password,function(err, isMatch){

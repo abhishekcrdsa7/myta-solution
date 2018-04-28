@@ -11,7 +11,7 @@ const localOptions = {usernameField: "username"};
 const localLogin = new LocalStrategy(localOptions,function(username, password, done){
     const user = _.filter(users, {username})[0];
     if(!user) {
-      return done(null, false);
+      return done(null, {error: "error"});
     }
     done(null,user);
 });
@@ -26,7 +26,7 @@ const jwtLogin = new JwtStrategy(jwtOptions,function(payload,done){
   if(user){
     return done(null,user);
   }
-  return done(null,false);
+  return done(null,{error: "error"});
 });
 
 passport.use(jwtLogin);

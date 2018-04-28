@@ -16,7 +16,7 @@ export const login = function({ username,password }){
     })
     .then((response) => {
       if(response.data.error) {
-        return  dispatch(authError("Bad Login Info."));
+        return  dispatch(authError(response.data.error));
       }
       dispatch({type: AUTH_USER});
       localStorage.setItem('token', response.data.token);
