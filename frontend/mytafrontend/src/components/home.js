@@ -15,7 +15,7 @@ class Home extends Component {
       return(
         <div id="login">
           <div id="hmcont">
-            <h3 id="hmhead">Please login or register to access the content section.</h3>
+            <h3 id="hmhead">You can learn everything.</h3>
             <div id="homeBtn">
               <Link className="btn btn-primary hmbtn" id="hmlogin" to="/login">Login</Link>
               <Link className="btn btn-primary hmbtn" id="hmreg" to="/register">Register</Link>
