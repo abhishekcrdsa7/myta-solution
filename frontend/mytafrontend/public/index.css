@@ -11,6 +11,8 @@ body {
   padding: 0;
 }
 
+
+
 #logout:hover {
   cursor: pointer;
 }
@@ -40,7 +42,8 @@ body {
 }
 
 .navbar {
-  box-shadow: 0 1px 2px gray;
+  -webkit-box-shadow: 0 1px 2px gray;
+          box-shadow: 0 1px 2px gray;
 }
 
 
@@ -101,9 +104,85 @@ body {
   z-index: -1;
 }
 
+#homeBtn {
+  -webkit-animation-name: hmbtn;
+          animation-name: hmbtn;
+  -webkit-animation-duration: 0.9s;
+          animation-duration: 0.9s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: cubic-bezier(.52,.11,.44,1.58);
+          animation-timing-function: cubic-bezier(.52,.11,.44,1.58);
+  margin-top: 30px;
+}
+
+@-webkit-keyframes hmbtn {
+  0% {
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes hmbtn {
+  0% {
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 #hmhead {
   text-align: center;
   letter-spacing: 3px;
+  -webkit-animation-name: hmhed;
+          animation-name: hmhed;
+  -webkit-animation-duration: 0.9s;
+          animation-duration: 0.9s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: cubic-bezier(.52,.11,.44,1.58);
+          animation-timing-function: cubic-bezier(.52,.11,.44,1.58);
+}
+
+@-webkit-keyframes hmhed {
+  0% {
+    -webkit-transform: translateX(-200px);
+            transform: translateX(-200px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes hmhed {
+  0% {
+    -webkit-transform: translateX(-200px);
+            transform: translateX(-200px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 #homeBtn {
