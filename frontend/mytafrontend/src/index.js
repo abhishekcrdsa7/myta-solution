@@ -27,9 +27,6 @@ ReactDOM.render(
           <Route path="/eqnofln" component={EqnofLine}/>
           <Route path="/rlsofusa" component={RlsOfUSA}/>
           <Route exact path="/" component={Home} />
-          <Route render={() => {
-            return <h1>Not Found!!</h1>
-          }} />
         </div>
     </BrowserRouter>
   </Provider>
